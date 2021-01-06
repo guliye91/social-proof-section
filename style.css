@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    transform: translateY(50px);
+    position: relative;
+}
+.container::before{
+    content: url('./images/bg-pattern-top-desktop.svg');
+    position: absolute;
+    left: -200px;
+    top: -100px;
+}
+.intro-rating{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.rating{
+    display: flex;
+    justify-content: space-around;
+    background-color: hsl(300, 24%, 96%);
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.rating p{
+    color: hsl(300, 43%, 22%);
+    font-weight: 700;
+    padding: 10px;
+}
+.rating #guru{
+    padding-left: 20px;
+}
+.rating-1, .rating-2{
+    margin-bottom: 20px;
+}
+.rating-2{
+    transform: translateX(20px);
+}
+.rating-3{
+    transform: translateX(40px);
+}
+.intro{
+    width: 45%;
+}
+.intro h1{
+    color: hsl(300, 43%, 22%);
+    font-weight: 700;
+    width: 80%;
+}
+.intro p{
+    width: 100%;
+    font-weight: 400;
+    padding: 10px 0;
+    color: hsl(303, 10%, 53%);
+}
+
+/* ...........cards ............................................*/
+.cards{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+.card{
+    background-color: hsl(300, 43%, 22%);
+    padding: 30px;
+    color:  hsl(0, 0%, 100%);
+    border-radius: 10px;
+    /* flex-basis: 100%; */
+}
+.card .info{
+    font-weight: 400;
+    padding: 5px;
+}
+.card-1, .card-2{
+    margin-right: 20px;
+}
+.card-2{
+    transform: translateY(20px);
+}
+.card-3{
+    transform: translateY(40px);
+}
+.profile{
+    display: flex;
+    padding: 10px 0;
+}
+.profile span{
+    display: block;
+    color: hsl(333, 80%, 67%);
+    font-weight: 400;
+}
+.profile h5{
+    padding: 0 15px;
+    font-weight: 500;
+}
+.image-container{
+    width: 40px;
+    height: 40px;
+}
+.image-container img{
+    max-width: 100%;
+    border-radius: 100%;
+}
+
+.attribution{
+    margin-top: 100px;
+    font-size: 15px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+
+  /* media queries */
+  @media screen and (max-width: 1024px){
+    body{
+        max-width: 90%;
+    }
+    .intro{
+        width: 50%;
+    }
+    .intro h1{
+        width: 85%;
+    }
+    .card .info{
+        font-weight: 400;
+        padding: 5px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+      body{
+          text-align: center;
+      }
+    .intro-rating{
+        flex-direction: column;
+    }
+    .rating{
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .intro{
+        width: 100%;
+    }
+    .intro h1{
+        width: 70%;
+        margin: auto;
+        animation-name: intro-top;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        transition: animation 650ms ease;
+    }
+    @keyframes intro-top{
+        from{
+            transform: translateY(-20px);
+        }
+        to{
+            transform: translateY(0);
+        }
+    }
+    .intro p{
+        padding: 30px 0;
+        width: 80%;
+        margin: auto;
+    }
+    .cards{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        padding: 20px;
+        margin: auto;
+    }
+  }
+  @media screen and (max-width: 576px){
+    .rating-2{
+        transform: translateX(0);
+    }
+    .rating-3{
+        transform: translateX(0);
+    }
+    .rating{
+        padding: 20px 0;
+    }
+    .intro p{
+        padding: 30px 0;
+        width: 90%;
+        margin: auto;
+    }
+    .card{
+        padding: 30px;
+        margin: 0;
+    }
+  }
+  @media screen and (max-width: 420px){
+    .intro{
+        width: 100%;
+    }
+    .intro h1{
+        width: 100%;
+    }
+    .intro p{
+        width: 100%;
+    }
+  }
+  @media screen and (max-width: 375px){
+    .intro p{
+        padding: 30px 0;
+    }
+  }
